@@ -3,9 +3,8 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Row, Col, Card } from 'react-bootstrap';
 
-
 const DetailProduct = () => {
-  const { productId } = useParams()
+  const [productId ] = useParams();
   const [productInfo, setProductInfo] = useState({})
 
   const getProduct = async (id) => {
@@ -17,7 +16,8 @@ const DetailProduct = () => {
   }
 
   useEffect(() => {
-    getProduct(productId)
+    getProduct(productId);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
