@@ -4,13 +4,13 @@ import axios from 'axios'
 import { Row, Col, Card } from 'react-bootstrap';
 
 const DetailProduct = () => {
-  const [productId ] = useParams();
+
+  const { productId } = useParams()
   const [productInfo, setProductInfo] = useState({})
 
   const getProduct = async (id) => {
     const url = `https://proyecto5-backend.herokuapp.com/api/v1/products/${id}`
     const res = await axios.get(url)
-    console.log("Hola")
     console.log(res)
     setProductInfo(res.data)
   }
@@ -19,7 +19,6 @@ const DetailProduct = () => {
     getProduct(productId);
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
   return (
     <>
       <Row>
