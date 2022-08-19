@@ -1,7 +1,6 @@
 
-import Logo from '../../../src/imgs/GP.png'
 import ProfileUi from 'react-profile-card';
-const Profile = (props) => {
+const Profile = () => {
 
     return (
         <div> 
